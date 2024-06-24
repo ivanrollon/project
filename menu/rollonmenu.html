@@ -1,0 +1,303 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RESTAURANT MENU</title>
+  <style>
+  body{
+  background-attachment: fixed;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  }
+  h1{
+	background-attachment: fixed;
+    margin: 30px 10px 40px 460px;
+    padding: 10px ;
+    background: linear-gradient(to bottom , #e61717 0%, #0C0908 100%);
+    color: white;
+    font-size: 35px;
+    border-radius: 10px;
+    margin: auto;
+    width: 900px; 
+    margin-top: 30px;
+    text-align: center;
+    font-family:  Calisto MT;
+  }
+table{
+	background-attachment: fixed;
+	border-collapse: collapse;
+    width: 900px;
+	margin: 0px 0px 0px 280px;
+	padding: 20px;
+    backdrop-filter: blur(5px);
+	
+  }
+td {
+	  color: white;
+      border: 1px solid #ddd;
+      text-align: left;
+      padding: 8px;
+	  font-size: 20px;
+	  font-family: Calisto MT;
+	  
+	 }
+th {
+	 color: white;
+	 border: 1px solid #ddd;
+	 padding: 8px;
+	 width: 20%;
+	 text-align: left;
+	 font-style: bold;
+	 font-size: 30px;
+	 font-family: Calisto MT;
+	 }
+img{
+	margin: auto;
+	width: 6vw;
+	height: 6vw;
+	border: solid white 1px;
+	border-radius: 5px;
+	}
+button{
+	margin: 0px -560px 0px 560px;
+	background: linear-gradient(to bottom , #e61717 0%, #0C0908 100%);
+	color: white;
+	width: 100px;
+	height: 40px;
+    padding: 10px ;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+	font-family: Calisto MT;
+}
+  .back-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .back-btn:hover {
+    background-color: #0056b3;
+  }
+  </style>
+</head>
+<body background = "bg.gif">
+ <a href="javascript:void(0);" class="back-btn" onclick="goBack()">&lt; Back</a>
+ <h1>GUAPITO'S RESTAURANT</h1>
+ <br>
+ <a href="order1.html">
+    <button id= "button5" onclick="addData5();handleButtonClick5()">Order</button>
+</a>
+<button id= "button" onclick="addData();handleButtonClick()">Main Dish</button>
+<button id= "button1" onclick="addData1();handleButtonClick1()">Vegetables</button>
+<button id= "button2" onclick="addData2();handleButtonClick2()">Dessert</button>
+<button id= "button3" onclick="addData3();handleButtonClick3()">Drinks</button>
+<button id= "button4" onclick="addData4();handleButtonClick4()">Add ons</button>
+<div class = "content"> 
+<h2>
+ <table border= "0" >
+	<thead>
+      <tr>
+        <th>Image</th>
+        <th>Main Dish</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody id="MainDish">
+</div>
+  </table>
+<div class = "content"> 
+  <table border = "0" >
+    <thead>
+        <th>Image</th>
+        <th>Vegetables</th>
+        <th>Price</th>
+    </thead>
+   <tbody id="Vegetables">
+  </table>
+</div>
+ <div class = "content"> 
+ <table border= "0" >
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Dessert</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody id="Dessert">
+</div>
+<div class = "content"> 
+ <table border= "0">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Drinks</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody id="Drinks">
+</div>
+<div class = "content"> 
+ <table border= "0" >
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Add ons</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody id="Addons"colspan ="3">
+</div>
+</h2>
+  <script>
+  function addData() {
+        var tableBody = document.getElementById('MainDish');
+
+        var newRow = tableBody.insertRow();
+
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+        var cell3 = newRow.insertCell(2);
+
+        var MainDish = "Bulalo"+"<br>"+"Sinigang Salmon"+"<br>"+"Bangus Ala Rico"+"<br>"+"Crispy Pata"+"<br>"+"Sizzling Sisig";
+        var Price = "₱ 650.00"+"<br>"+"₱ 600.00"+"<br>"+"₱ 620.00"+"<br>"+"₱ 850.00"+"<br>"+"₱ 350.00";
+
+        cell2.innerHTML = MainDish;
+        cell3.innerHTML = Price;
+				
+		var imageUrls = ["bulalo.jpeg", "Salmon.jpeg","Bangus.jpeg","pata.jpeg","sisig.jpeg"];
+
+		for (var i = 0; i < imageUrls.length; i++) {
+		var img = document.createElement("img");
+		img.src = imageUrls[i];
+		img.alt = "Bulalo";
+		cell1.appendChild(img);
+	}
+}
+	function addData1() {
+  		var tableBody = document.getElementById('Vegetables');
+
+        var newRow = tableBody.insertRow();
+
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+        var cell3 = newRow.insertCell(2);
+
+        var Vegetables = "Chopsuey"+"<br>"+"Pakbet"+"<br>"+"Ensalandang Talong";
+        var Price = "₱ 250.00"+"<br>"+"₱ 300.00"+"<br>"+"₱ 250.00";
+		
+        cell2.innerHTML = Vegetables;
+        cell3.innerHTML = Price;
+		
+		var imageUrls = ["chopsuey.jpeg", "pakbet.jpeg","talong.jpeg"];
+
+		for (var i = 0; i < imageUrls.length; i++) {
+		var img = document.createElement("img");
+		img.src = imageUrls[i];
+		img.alt = "Bulalo";
+		cell1.appendChild(img);
+  }
+}
+		function addData2() {
+  		var tableBody = document.getElementById('Dessert');
+
+        var newRow = tableBody.insertRow();
+
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+        var cell3 = newRow.insertCell(2);
+
+        var Dessert = "Lecheflan"+"<br>"+"Mango Graham"+"<br>"+" Halo-halo";
+        var Price = "₱ 230.00"+"<br>"+"₱ 250.00"+"<br>"+"₱ 180.00";
+		
+        cell2.innerHTML = Dessert;
+        cell3.innerHTML = Price;
+		
+			
+		var imageUrls = ["leche.jpeg", "mango.jpeg","halohalo.jpeg"];
+
+		for (var i = 0; i < imageUrls.length; i++) {
+		var img = document.createElement("img");
+		img.src = imageUrls[i];
+		img.alt = "Bulalo";
+		cell1.appendChild(img);
+	}
+}
+		function addData3() {
+  		var tableBody = document.getElementById('Drinks');
+
+        var newRow = tableBody.insertRow();
+
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+        var cell3 = newRow.insertCell(2);
+
+        var Drinks = "Pomelo Juice"+"<br>"+"Guyabano Juice"+"<br>"+"Lipton Ice Tea";
+        var Price = "₱ 95.00"+"<br>"+"₱ 95.00"+"<br>"+"₱ 90.00";
+		
+        cell2.innerHTML = Drinks;
+        cell3.innerHTML = Price;
+		
+			
+		var imageUrls = ["pomelo.jpeg", "guyabano.jpeg","iced tea.jpeg"];
+
+		for (var i = 0; i < imageUrls.length; i++) {
+		var img = document.createElement("img");
+		img.src = imageUrls[i];
+		img.alt = "Bulalo";
+		cell1.appendChild(img);
+	}
+}
+		function addData4() {
+  		var tableBody = document.getElementById('Addons');
+
+        var newRow = tableBody.insertRow();
+
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+        var cell3 = newRow.insertCell(2);
+
+        var Addons = "Rice Platter"+"<br>"+"Guapito Rice"+"<br>"+"Bagoong Rice";
+        var Price = "₱ 150.00"+"<br>"+"₱ 200.00"+"<br>"+"₱ 200.00";
+		
+        cell2.innerHTML = Addons;
+        cell3.innerHTML = Price;
+		
+			
+		var imageUrls = ["PLRice.jpeg", "guapitos.jpeg","bagoong.jpeg"];
+
+		for (var i = 0; i < imageUrls.length; i++) {
+		var img = document.createElement("img");
+		img.src = imageUrls[i];
+		img.alt = "Bulalo";
+		cell1.appendChild(img);
+	}
+}
+function handleButtonClick() {
+    document.getElementById("button").disabled = true;
+    }
+function handleButtonClick1(){
+	document.getElementById("button1").disabled = true;	
+	}
+function handleButtonClick2(){
+	document.getElementById("button2").disabled = true;
+	}
+function handleButtonClick3(){
+	document.getElementById("button3").disabled = true;
+	}
+function handleButtonClick4(){
+	document.getElementById("button4").disabled = true;
+	}
+function goBack() {
+  window.history.back();
+}
+</script>
+</body>
+</html>
+

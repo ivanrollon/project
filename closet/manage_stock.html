@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserved Stock</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      font-weight: bold;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+	    input[type="button"] {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    input[type="button"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Reserved Stock</h1>
+    <p>Item: <strong id="item-name"></strong></p>
+    <p>Reserved Stock: <span id="reserved-stock"></span></p>
+    <form id="add-stock-form">
+      <label for="additional-stock">Reserved Stock:</label>
+      <input type="number" id="additional-stock" name="additional-stock" min="1" required>
+      <input type="submit" value="Add Stock">
+    </form>
+	 <form id="add-stock-form">
+    <label for="additional-stock">Additional Stock:</label>
+    <input type="number" id="additional-stock" name="additional-stock" min="1" required>
+    <input type="button" value="Add Stock" onclick="addStock()">
+  </form>
+	  <a href="javascript:history.back()">Back</a>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const itemName = urlParams.get('item');
+      document.getElementById('item-name').textContent = itemName;
+	  
+      let reservedStock = parseInt(localStorage.getItem(itemName)) || 0;
+      document.getElementById('reserved-stock').textContent = reservedStock;
+
+      document.getElementById('add-stock-form').addEventListener('submit', (event) => {
+        event.preventDefault();
+        const additionalStock = parseInt(document.getElementById('additional-stock').value);
+        if (additionalStock > 0) {
+          reservedStock += additionalStock;
+          localStorage.setItem(itemName, reservedStock);
+          document.getElementById('reserved-stock').textContent = reservedStock;
+          alert(`Added ${additionalStock} stock to ${itemName}.`);
+        } else {
+          alert('Please enter a valid number.');
+        }
+      });
+    });
+	    function addStock() {
+      var additionalStock = parseInt(document.getElementById('additional-stock').value);
+      if (additionalStock > 0) {
+        localStorage.setItem('additional_stock', additionalStock);
+        alert(`Added ${additionalStock} stock.`);
+        window.location.href = "ROLLON_CLOSET.html";
+      } else {
+        alert('Please enter a valid number.');
+      }
+    }
+  </script>
+</body>
+</html>

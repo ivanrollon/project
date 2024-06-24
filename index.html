@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project</title>
+    <style>
+        body {
+            font-family: SimSun;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+        header {
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        section {
+            padding: 2rem 0;
+        }
+        footer {
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .button-container a {
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+        }
+        .button-container a img {
+            width: 100%;
+            height: auto;
+            border: none;
+        }
+		  .button-container1:hover {
+    transform: scale(1.05);
+  }
+  .design{
+  font-family: SimSun;
+  font-size: 40px;
+  font-weight: bold;
+  }
+    </style>
+</head>
+<body>
+    <header>	
+        <h1>P  R  O  J  E  C  T</h1>
+    </header>
+    
+    <div class="container">
+		<div class="button-container">
+                <a class="button-container1" href="resume/Rollon.html">
+                    <img src="profile.png" alt="Button 1">
+                    <p class="design">RESUME</p>
+                </a>
+                <a class="button-container1" href="rog/registration.html">
+                    <img src="website.png" alt="Button 2">
+                    <p class="design">REGISTRATION FORM</p>
+                </a>
+                <a class="button-container1" href="menu/rollonmenu.html">
+                    <img src="menu.png" alt="Button 3">
+                    <p class="design">RESTAURANT MENU</p>
+                </a>
+                <a class="button-container1" href="closet/rolloncloset.html">
+                    <img src="store.png" alt="Button 4">
+                    <p class="design">CLOSET</p>
+                </a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Projects Website</p>
+    </footer>
+</body>
+</html>

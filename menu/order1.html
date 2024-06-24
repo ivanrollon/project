@@ -1,0 +1,231 @@
+<html>
+<title>ORDER</title>
+<body background= "bg3.jpg">
+<style>
+body{
+  background-attachment: fixed;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.item {
+	font-size: 25px;
+	margin: 20px;
+	color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+	max-width: 260px;
+    width: 100%;
+	backdrop-filter: blur(10px);
+}
+.items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+img{
+	margin: auto;
+	width: 6vw;
+	height: 6vw;
+	border: solid white 1px;
+	border-radius: 5px;
+}
+table{
+	width: 90%;
+	margin: 20px;
+	display: flex; 
+	justify-content: center; 
+	align-items: center;
+	backdrop-filter: blur(10px);
+	display: flex; 
+	justify-content: center; 
+	align-items: center;
+}
+.design{
+	font-size: 25px;
+	margin: 20px;
+	color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+	max-width: 350px;
+    width: 100%;
+	backdrop-filter: blur(10px);
+}
+</style>
+<div class="items">
+	<div class="item" data-name="Bulalo">
+		<h2>Main Dish</h2>
+		<img src="bulalo.jpeg" alt="bulalo" onclick="openPopup(bulalo.jpeg)"><br>
+		<input type="checkbox" class="checkbox">Bulalo&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>₱
+		<label class="label">650.00</label><br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp<input type="number" class="quantity" value="0">
+	</div>
+	<div class="item" data-name="Sinigang Salmon">
+		<h2>Main Dish</h2>
+		<img src="Salmon.jpeg" alt="Salmon"><br>
+		<input type="checkbox" class="checkbox">Sinigang Salmon&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>₱
+		<label class="label">600.00</label><br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp<input type="number" class="quantity" value="0">
+	</div>
+	<div class="item" data-name="Bangus Ala Rico">
+		<h2>Main Dish</h2>
+		<img src="Bangus.jpeg" alt="Bangus"><br>
+		<input type="checkbox" class="checkbox">Bangus Ala Rico&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>₱
+		<label class="label">620.00</label><br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp<input type="number" class="quantity" value="0">
+	</div>
+	<div class="item" data-name="Crispy Pata">
+		<h2>Main Dish</h2>
+		<img src="pata.jpeg" alt="pata"><br>
+		<input type="checkbox" class="checkbox">Crispy Pata&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>₱
+		<label class="label">850.00</label><br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp<input type="number" class="quantity" value="0">
+	</div>
+	<div class="item" data-name="Sizzling Sisig">
+		<h2>Main Dish</h2>
+		<img src="sisig.jpeg" alt="sisig"><br>
+		<input type="checkbox" class="checkbox">Sizzling Sisig&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>₱
+		<label class="label">350.00</label><br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp<input type="number" class="quantity" value="0">
+	</div>
+	<div class="item" data-name="Chopsuey">
+		<h2>Vegetables</h2>
+		<img src="chopsuey.jpeg" alt="chopsuey"><br>
+		<input type="checkbox" class="checkbox">Chopsuey&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>₱
+		<label class="label">250.00</label><br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp<input type="number" class="quantity" value="0">
+	</div>
+	<div class="item" data-name="Pakbet">
+		<h2>Vegetables</h2>
+		<img src="pakbet.jpeg" alt="pakbet"><br>
+		<input type="checkbox" class="checkbox">Pakbet&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>₱
+		<label class="label">350.00</label><br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp<input type="number" class="quantity" value="0">
+	</div>
+	<div class="item" data-name="Enseladang Talong">
+		<h2>Vegetables</h2>
+		<img src="talong.jpeg" alt="talong"><br>
+		<input type="checkbox" class="checkbox">Enseladang Talong&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>₱
+		<label class="label">250.00</label><br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp<input type="number" class="quantity" value="0">
+	</div>
+	<div class="item" data-name="Lecheflan">
+		<h2>Dessert</h2>
+		<img src="leche.jpeg" alt="leche"><br>
+		<input type="checkbox" class="checkbox">Lecheflan&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>₱
+		<label class="label">230.00</label><br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp<input type="number" class="quantity" value="0">
+	</div>
+	<div class="item" data-name="Mango Graham">
+		<h2>Dessert</h2>
+		<img src="mango.jpeg" alt="mango"><br>
+		<input type="checkbox" class="checkbox">Mango Graham&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>₱
+		<label class="label">250.00</label><br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp<input type="number" class="quantity" value="0">
+	</div>
+	<div class="item" data-name="Halo-halo">
+		<h2>Dessert</h2>
+		<img src="halohalo.jpeg" alt="halohalo"><br>
+		<input type="checkbox" class="checkbox">Halo-halo&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>₱
+		<label class="label">180.00</label><br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp<input type="number" class="quantity" value="0">
+	</div>
+	<div class="item" data-name="Pomelo Juice">
+		<h2>Drinks</h2>
+		<img src="pomelo.jpeg" alt="pomelo"><br>
+		<input type="checkbox" class="checkbox">Pomelo Juice&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>₱
+		<label class="label">95.00</label><br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp<input type="number" class="quantity" value="0">
+	</div>
+	<div class="item" data-name="Guyabano Juice">
+		<h2>Drinks</h2>
+		<img src="guyabano.jpeg" alt="guyabano"><br>
+		<input type="checkbox" class="checkbox">Guyabano Juice&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>₱
+		<label class="label">95.00</label><br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp<input type="number" class="quantity" value="0">
+	</div>
+	<div class="item" data-name="Lipton Ice Tea">
+		<h2>Drinks</h2>
+		<img src="iced tea.jpeg" alt="iced tea"><br>
+		<input type="checkbox" class="checkbox">Lipton Ice Tea&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>₱
+		<label class="label">90.00</label><br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp<input type="number" class="quantity" value="0">
+	</div>
+	<div class="item" data-name="Rice Platter">
+		<h2>Add ons</h2>
+		<img src="PLRice.jpeg" alt="PLRice"><br>
+		<input type="checkbox" class="checkbox">Rice Platter&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>₱
+		<label class="label">150.00</label><br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp<input type="number" class="quantity" value="0">
+	</div>
+	<div class="item" data-name="Guapito Rice">
+		<h2>Add ons</h2>
+		<img src="guapitos.jpeg" alt="guapitos"><br>
+		<input type="checkbox" class="checkbox">Guapito Rice&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>₱
+		<label class="label">200.00</label><br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp<input type="number" class="quantity" value="0">
+	</div>
+	<div class="item" data-name="Bagoong Rice">
+		<h2>Add ons</h2>
+		<img src="bagoong.jpeg" alt="bagoong"><br>
+		<input type="checkbox" class="checkbox">Bagoong Rice&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>₱
+		<label class="label">200.00</label><br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp<input type="number" class="quantity" value="0">
+	</div>
+	<div class = "design">
+		<h2>Selected Items:</h2>
+		<p id="selectedItems"></p>
+	</div>
+	<div class = "design">
+		<p><button onclick="calculateTotalAmount()" style= "font-size: 25px;font-family: Calisto MT;">Total Amount</button>
+		<button class="button" onclick="clearSelection()" style= "font-size: 25px;font-family: Calisto MT;">Clear Selection</button></p>
+		<p style= "color: white;" id="totalAmount">Total Amount:</p>
+		<button id= "button" onclick="goBack()">Back</button>
+	</div>
+</div>
+<script>
+    function calculateTotalAmount() {
+        var totalAmount = 0;
+		var selectedItems =[];
+		
+		var divs = document.querySelectorAll('.item');
+		
+		for (var i = 0; i < divs.length; i++) {
+        var div = divs[i];
+        var checkbox = div.querySelector('.checkbox');
+		
+        if (checkbox.checked) {
+        var label = parseFloat(div.querySelector('.label').innerText);
+        var quantity = parseInt(div.querySelector('.quantity').value);
+		var name = div.getAttribute('data-name');
+
+        totalAmount += label * quantity;
+        
+		selectedItems.push({
+		name: name,
+		label: div.querySelector('.label').innerText,
+		quantity: div.querySelector('.quantity').value
+                });
+            }
+        }
+
+        document.getElementById('totalAmount').innerText = 'Total Amount: ₱' + totalAmount.toFixed(2);
+
+        var selectedItemsDisplay = selectedItems.map(item => item.name + ': ' + '₱'+item.label +' (Quantity: ' + item.quantity + ')').join(', ');
+        document.getElementById('selectedItems').innerText = '' + selectedItemsDisplay;
+}
+function clearSelection() {
+      var checkboxes = document.querySelectorAll('.item');
+      checkboxes.forEach(function(checkbox) {
+        checkbox.checked = false;
+      });
+      document.getElementById('totalAmount').innerHTML = 'Total Amount: ₱0.00';
+      document.getElementById('selectedItems').innerHTML = '';
+}
+function goBack() {
+  window.history.back();
+}
+</script>
+</body>
+</html>

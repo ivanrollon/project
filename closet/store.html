@@ -1,0 +1,472 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROLLON CLOSET</title>
+  <style>
+    body {
+      font-family: Calisto MT;
+      margin: 0;
+      padding: 0;
+      background-color: #3e4645;
+    }
+    .head {
+	  border-radius: 10px;
+      width: 97%;
+	  height: 60%;
+	  margin: auto;
+	  margin-top: 10px;
+	  margin-bottom: 10px;
+	  background: black;
+    }
+	.logo{
+	  margin: auto;
+      position: absolute;
+      top: 10px;
+      left: 100px;
+      height: 400px;
+      width: 500px;
+    }
+    main {
+      padding: 20px;
+    }
+    .section {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #333;
+	  text-align: center;
+	  font-size: 40px;
+	  font-family:  Calisto MT;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    li {
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+    .jeans-image, .shirt-image, .perfume-image, .sandals-image, .toys-image {
+      width: 200px; 
+	  height: 250px; 
+	  border-radius: 5px;
+	  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	  transition: transform 0.3s ease;
+	  border-radius: 8px;
+	  border: 4px solid #3e4645;
+	}
+	.jeans-image:hover, .shirt-image:hover, .perfume-image:hover, .sandals-image:hover, .toys-image:hover {
+	  transform: scale(1.02); 
+	}
+    .item-details {
+      text-align: center;
+    }
+    .item-name, .item-price, .item-stock {
+      display: block;
+	  font-size: 21px;
+	  font-family:  Calisto MT;
+    }
+    .cart-container {
+	  font-size: 25px;
+	  margin: 20px;
+	  color: white;
+      text-align: center;
+      padding: 20px;
+      border-radius: 8px;
+	  max-width: 260px;
+      width: 100%;
+    }
+    .cart-item {
+      margin-bottom: 10px;
+    }
+    .cart-summary {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+	.add-to-cart-button, .increase-stock-button{
+	  font-family:  Calisto MT;
+	  margin-top: 10px;
+	  background-color: #3e4645;
+   	  border: none;
+	  color: white;
+	  padding: 10px 20px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 20px;
+	  border-radius: 5px;
+	  cursor: pointer;
+	  transition: background-color 0.3s;
+	}
+	.add-to-cart-button:hover {
+		background-color: #b8b1aa;
+	}
+	.add-to-cart-button:active {
+		background-color: #3e4645;
+	}
+	.increase-stock-button:hover {
+		background-color: #b8b1aa;
+	}
+	.increase-stock-button:active {
+		background-color: #3e4645;
+	}
+	.table{
+	height:auto;
+	width: 50%;
+	margin: auto;
+	justify-content: space-between;
+	background: white;
+	border-radius: 10px;
+	font-family:  Calisto MT;
+	}
+	
+	.slider {
+	margin-top: 50px;
+	right: 200px;
+    width: 70vmin;
+    overflow: hidden;
+    position: absolute;
+	border-radius: 10px;
+  }
+
+  .slides {
+	height: 350px;
+  	width: 550px;
+    display: flex;
+    animation: slideAnimation 12s infinite;
+  }
+ 
+
+  @keyframes slideAnimation {
+    0% {
+      transform: translateX(0%);
+    }
+    25% {
+      transform: translateX(0%);
+    }
+    30% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(-100%);
+    }
+    55% {
+      transform: translateX(-200%);
+    }
+    75% {
+      transform: translateX(-200%);
+    }
+    80% {
+      transform: translateX(-300%);
+    }
+    100% {
+      transform: translateX(-300%);
+    }
+  }
+	
+	
+	
+  </style>
+
+</head>
+<body>
+<div class = "head">
+	<img src="storebg.jpg" alt="Logo" class="logo">
+<div class="slider">
+  <div class="slides">
+    <img src="slide1.jpg" alt="Image 1">
+    <img src="slide3.jpg" alt="Image 3">
+	<img src="slide4.jpg" alt="Image 4">
+    <img src="slide5.jpg" alt="Image 5">
+  </div>
+</div>
+</div>
+  <main>
+    <section id="jeans-section" class="section">
+      <h2>JEANS</h2>
+      <ul id="jeans-list">
+        <li>
+          <div class="item-details">
+            <img src="skinny.jpg" alt="Jeans" class="jeans-image">
+            <span class="item-name">Skinny Jeans</span>
+            <span class="item-price">₱700.00</span>
+			<span class="item-stock">Stock: 15</span>
+            <button class="add-to-cart-button" onclick="addToCart(this)">Add to Cart</button>
+			<button class="increase-stock-button" onclick="increaseStock(this)">Add Stock</button>
+          </div>
+        </li>
+        <li>
+          <div class="item-details">
+            <img src="straight.jpg" alt="Jeans" class="jeans-image">
+            <span class="item-name">Straight Jeans</span>
+            <span class="item-price">₱750.00</span>
+			<span class="item-stock">Stock: 15</span>
+            <button class="add-to-cart-button" onclick="addToCart(this)">Add to Cart</button>
+			<button class="increase-stock-button" onclick="increaseStock(this)">Add Stock</button>
+          </div>
+        </li>
+        <li>
+          <div class="item-details">
+            <img src="ripped.jpg" alt="Jeans" class="jeans-image">
+            <span class="item-name">Ripped Jeans</span>
+            <span class="item-price">₱800.00</span>
+			<span class="item-stock">Stock: 15</span>
+            <button class="add-to-cart-button" onclick="addToCart(this)">Add to Cart</button>
+			<button class="increase-stock-button" onclick="increaseStock(this)">Add Stock</button>
+          </div>
+        </li>
+        <li>
+          <div class="item-details">
+            <img src="bootcut.jpg" alt="Jeans" class="jeans-image">
+            <span class="item-name">Bootcut Jeans</span>
+            <span class="item-price">₱650.00</span>
+			<span class="item-stock">Stock: 15</span>
+            <button class="add-to-cart-button" onclick="addToCart(this)">Add to Cart</button>
+			<button class="increase-stock-button" onclick="increaseStock(this)">Add Stock</button>
+          </div>
+        </li>
+      </ul>
+    </section>
+    
+	<section id="tshirt-section" class="section">
+      <h2>SHIRTS</h2>
+      <ul id="tshirt-list">
+        <li>
+          <div class="item-details">
+            <img src="sleeveless.jpg" alt="Shirt" class="shirt-image">
+            <span class="item-name">Sleeveless Shirt</span>
+            <span class="item-price">₱999.00</span>
+			<span class="item-stock">Stock: 15</span>
+            <button class="add-to-cart-button" onclick="addToCart(this)">Add to Cart</button>
+			<button class="increase-stock-button" onclick="increaseStock(this)">Add Stock</button>
+          </div>
+        </li>
+        <li>
+          <div class="item-details">
+            <img src="tshirt.jpg" alt="Shirt" class="shirt-image">
+            <span class="item-name">T-shirt</span>
+            <span class="item-price">₱599.00</span>
+			<span class="item-stock">Stock: 15</span>
+            <button class="add-to-cart-button" onclick="addToCart(this)">Add to Cart</button>
+			<button class="increase-stock-button" onclick="increaseStock(this)">Add Stock</button>
+          </div>
+        </li>
+        <li>
+          <div class="item-details">
+            <img src="polo.jpg" alt="Shirt" class="shirt-image">
+            <span class="item-name">Polo Shirt</span>
+            <span class="item-price">₱1299.00</span>
+			<span class="item-stock">Stock: 15</span>
+            <button class="add-to-cart-button" onclick="addToCart(this)">Add to Cart</button>
+			<button class="increase-stock-button" onclick="increaseStock(this)">Add Stock</button>
+          </div>
+        </li>
+        <li>
+          <div class="item-details">
+            <img src="hoody.jpg" alt="Shirt" class="shirt-image">
+            <span class="item-name">Hoody</span>
+            <span class="item-price">₱1599.00</span>
+			<span class="item-stock">Stock: 15</span>
+            <button class="add-to-cart-button" onclick="addToCart(this)">Add to Cart</button>
+			<button class="increase-stock-button" onclick="increaseStock(this)">Add Stock</button>
+          </div>
+        </li>
+      </ul>
+    </section>
+    
+	<section id="perfume-section" class="section">
+      <h2>PERFUMES</h2>
+      <ul id="perfume-list">
+        <li>
+          <div class="item-details">
+            <img src="gio.jpg" alt="Perfumes" class="perfume-image">
+            <span class="item-name">Acqua di Gio</span>
+            <span class="item-price">₱4099.00</span>
+			<span class="item-stock">Stock: 15</span>
+            <button class="add-to-cart-button" onclick="addToCart(this)">Add to Cart</button>
+			<button class="increase-stock-button" onclick="increaseStock(this)">Add Stock</button>
+          </div>
+        </li>
+        <li>
+          <div class="item-details">
+            <img src="ck.jpg" alt="Perfumes" class="perfume-image">
+            <span class="item-name">Calvin Klein CK One</span>
+            <span class="item-price">₱5599.00</span>
+			<span class="item-stock">Stock: 15</span>
+            <button class="add-to-cart-button" onclick="addToCart(this)">Add to Cart</button>
+			<button class="increase-stock-button" onclick="increaseStock(this)">Add Stock</button>
+          </div>
+        </li>
+        <li>
+          <div class="item-details">
+            <img src="coco.jpg" alt="Perfumes" class="perfume-image">
+            <span class="item-name">Chanel Coco Mademoiselle</span>
+            <span class="item-price">₱16000.00</span>
+			<span class="item-stock">Stock: 15</span>
+            <button class="add-to-cart-button" onclick="addToCart(this)">Add to Cart</button>
+			<button class="increase-stock-button" onclick="increaseStock(this)">Add Stock</button>
+          </div>
+        </li>
+        <li>
+          <div class="item-details">
+            <img src="viktor.jpg" alt="Perfumes" class="perfume-image">
+            <span class="item-name">Viktor & Rolf Flowerbomb</span>
+            <span class="item-price">₱10500.00</span>
+			<span class="item-stock">Stock: 15</span>
+            <button class="add-to-cart-button" onclick="addToCart(this)">Add to Cart</button>
+			<button class="increase-stock-button" onclick="increaseStock(this)">Add Stock</button>
+          </div>
+        </li>
+      </ul>
+    </section>
+    
+	<section id="sandals-section" class="section">
+      <h2>SANDALS</h2>
+      <ul id="perfume-list">
+        <li>
+          <div class="item-details">
+            <img src="outland2.jpg" alt="Sandals" class="sandals-image">
+            <span class="item-name">Outland 23621 Springfield Sandals</span>
+            <span class="item-price">₱1916.00</span>
+			<span class="item-stock">Stock: 15</span>
+            <button class="add-to-cart-button" onclick="addToCart(this)">Add to Cart</button>
+			<button class="increase-stock-button" onclick="increaseStock(this)">Add Stock</button>
+          </div>
+        </li>
+        <li>
+          <div class="item-details">
+            <img src="outland1.jpg" alt="Sandals" class="sandals-image">
+            <span class="item-name">Outland 21621 Denver Sandals</span>
+            <span class="item-price">₱2095.00</span>
+			<span class="item-stock">Stock: 15</span>
+            <button class="add-to-cart-button" onclick="addToCart(this)">Add to Cart</button>
+			<button class="increase-stock-button" onclick="increaseStock(this)">Add Stock</button>
+          </div>
+        </li>
+        <li>
+          <div class="item-details">
+            <img src="air.jpg" alt="Sandals" class="sandals-image">
+            <span class="item-name">Air Jordan 1 Zoom CMFT 2</span>
+            <span class="item-price">₱8095.00</span>
+			<span class="item-stock">Stock: 15</span>
+            <button class="add-to-cart-button" onclick="addToCart(this)">Add to Cart</button>
+			<button class="increase-stock-button" onclick="increaseStock(this)">Add Stock</button>
+          </div>
+        </li>
+        <li>
+          <div class="item-details">
+            <img src="7.jpg" alt="Sandals" class="sandals-image">
+            <span class="item-name">Nike Precision 7</span>
+            <span class="item-price">₱3695.00</span>
+			<span class="item-stock">Stock: 15</span>
+            <button class="add-to-cart-button" onclick="addToCart(this)">Add to Cart</button>
+			<button class="increase-stock-button" onclick="increaseStock(this)">Add Stock</button>
+          </div>
+        </li>
+      </ul>
+    </section>
+    
+	<section id="toys-section" class="section">
+      <h2>TOYS</h2>
+      <ul id="toys-list">
+        <li>
+          <div class="item-details">
+            <img src="h2.jpg" alt="Toy" class="toys-image">
+            <span class="item-name">Kawasaki H2 R Ninja Grey</span>
+            <span class="item-price">₱617.00</span>
+			<span class="item-stock">Stock: 15</span>
+            <button class="add-to-cart-button" onclick="addToCart(this)">Add to Cart</button>
+			<button class="increase-stock-button" onclick="increaseStock(this)">Add Stock</button>
+          </div>
+        </li>
+        <li>
+          <div class="item-details">
+            <img src="bmw.jpg" alt="Toy" class="toys-image">
+            <span class="item-name">BMW R 1250 GS 2020 White </span>
+            <span class="item-price">₱679.00</span>
+			<span class="item-stock">Stock: 15</span>
+            <button class="add-to-cart-button" onclick="addToCart(this)">Add to Cart</button>
+			<button class="increase-stock-button" onclick="increaseStock(this)">Add Stock</button>
+          </div>
+        </li>
+        <li>
+          <div class="item-details">
+            <img src="ducati.jpg" alt="Toy" class="toys-image">
+            <span class="item-name">Ducati 1199 Superleggra 2014 Red </span>
+            <span class="item-price">₱617.00</span>
+			<span class="item-stock">Stock: 15</span>
+            <button class="add-to-cart-button" onclick="addToCart(this)">Add to Cart</button>
+			<button class="increase-stock-button" onclick="increaseStock(this)">Add Stock</button>
+          </div>
+        </li>
+        <li>
+          <div class="item-details">
+            <img src="honda.jpg" alt="Toy" class="toys-image">
+            <span class="item-name">Honda CRF 450R 2017 Red</span>
+            <span class="item-price">₱927.00</span>
+			<span class="item-stock">Stock: 15</span>
+            <button class="add-to-cart-button" onclick="addToCart(this)">Add to Cart</button>
+			<button class="increase-stock-button" onclick="increaseStock(this)">Add Stock</button>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+ <div class="table">
+ <ul>
+  <div class="cart-container">
+    <h2>Your Cart</h2>
+    <div id="cart-items" style="color: black;"></div>
+  </div>
+  <div class="cart-container">
+  <h2>Purchase</h2>
+  <div id="cart-items" style="color: black;"></div>
+  <div id="cart-summary" style="color: black;"></div>
+</div>
+</ul>
+</div>
+  <script>
+  var totalItems = 0;
+  var totalPrice = 0;
+
+  function addToCart(button) {
+    var itemDetails = button.parentElement;
+    var itemName = itemDetails.querySelector(".item-name").textContent;
+    var itemPrice = parseFloat(itemDetails.querySelector(".item-price").textContent.replace("₱", ""));
+    var itemStockElement = itemDetails.querySelector(".item-stock");
+    var currentStock = parseInt(itemStockElement.textContent.split(":")[1].trim());
+    
+    if (currentStock > 0) {
+      itemStockElement.textContent = "Stock: " + (currentStock - 1);
+      totalItems++;
+      totalPrice += itemPrice;
+      document.getElementById("cart-summary").textContent = "Total Items : " + totalItems + " Total Price: ₱" + totalPrice.toFixed(2);
+
+
+      var cartItem = document.createElement("div");
+      cartItem.textContent = itemName + " - ₱ " + itemPrice;
+      document.getElementById("cart-items").appendChild(cartItem);
+      alert("Added to cart : " + itemName + "  ₱" + itemPrice);
+    } else {
+      alert("This item is out of stock.");
+    }
+  }
+  
+  
+  function increaseStock(button) {
+  var itemDetails = button.parentElement;
+  var itemStockElement = itemDetails.querySelector(".item-stock");
+  var currentStock = parseInt(itemStockElement.textContent.split(":")[1].trim());
+  itemStockElement.textContent = "Stock: " + (currentStock + 1);
+}
+</script>
+</body>
+</html>
